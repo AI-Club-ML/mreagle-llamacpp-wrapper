@@ -1,0 +1,147 @@
+@font-face {
+  font-family: "Roboto Mono";
+  src: url("./RobotoMono.ttf");
+}
+html {
+  overflow: hidden;
+}
+body {
+  background: #000;
+  color: #fff;
+  display: flex;
+  font-family: "Roboto Mono";
+  padding: 24px 40px;
+  padding-top: 32px;
+  margin: 0;
+  height: calc(100vh - 74px);
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+body.titlebar-shown {
+  margin-top: 40px;
+  padding-top: 8px;
+}
+
+::-webkit-scrollbar {
+  width: 16px;
+}
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: #43454b;
+  border-radius: 10px;
+  border: 4px #000 solid;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #575a63;
+}
+
+.chat-container {
+  display: flex;
+  flex-direction: column;
+  height: fit-content;
+  width: calc(100vw - 96px);
+  padding-bottom: 48px;
+}
+.chat {
+  width: calc(100vw - 144px);
+  font-size: smaller;
+  padding: 20px 0;
+  margin-left: 48px;
+  position: relative;
+  word-wrap: break-word;
+  min-height: 17.5px;
+}
+.chat::before {
+  content: " ";
+  background: #fff;
+  width: 36px;
+  height: 36px;
+  position: absolute;
+  top: 4px;
+  left: -48px;
+  border-radius: 69420px;
+}
+.chat.bot::before {
+  background-image: url("./assets/mreagles.png");
+  background-size: cover;
+}
+.chat.user::before {
+  background-image: url("./assets/user.png");
+  background-size: cover;
+}
+.chat::after {
+  content: " ";
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: small;
+  font-variant: small-caps;
+  color: #bbb;
+}
+.chat.bot::after {
+  content: "Mr. Eagle";
+}
+.chat.user::after {
+  content: "You";
+}
+
+.input-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  height: 96px;
+  pointer-events: none;
+  gap: 4px;
+}
+.input-container * {
+  pointer-events: auto;
+}
+.acrylic {
+  backdrop-filter: blur(8px);
+  background-color: #383c4670;
+  outline: none;
+  border: 1px solid #fff3;
+  filter: drop-shadow(3px 3px 8px #000);
+}
+.acrylic:disabled {
+  filter: contrast(0.7) brightness(0.6);
+  cursor: default;
+}
+#chat-input {
+  color: #fff;
+  font-family: "Roboto Mono";
+  padding: 0 16px;
+  height: 42px;
+  width: calc(100vw - 360px);
+  max-width: 512px;
+  border-radius: 8px;
+}
+.chat-button {
+  height: 42px;
+  width: 42px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.chat-button > .fill {
+  display: none;
+}
+.chat-button:not(:disabled):hover > .fill {
+  display: block;
+}
+.chat-button > .outline {
+  display: block;
+}
+.chat-button:not(:disabled):hover > .outline {
+  display: none;
+}

@@ -1,0 +1,12 @@
+# Node.js stuff
+/node_modules/
+package-lock.json
+
+# C++ project output and cache
+/api/cpp/*/out/
+/api/cpp/*/.vs/
+# llama.cpp log file
+/api/main.log
+
+# Electron builder output dir
+/dist/
