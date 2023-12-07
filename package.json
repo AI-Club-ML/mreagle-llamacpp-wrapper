@@ -29,9 +29,7 @@
       "oneClick": true,
       "perMachine": false
     },
-    "asarUnpack": [
-      "**/api/bin/**"
-    ],
+    "asar": false,
     "files": [
       "**/*",
       "!**/node_modules/*/{CHANGELOG.md,README.md,README,readme.md,readme}",
