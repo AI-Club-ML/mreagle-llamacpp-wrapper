@@ -1,5 +1,6 @@
 {
-  "name": "mreagles-llamacpp-wrapper",
+  "name": "mreagle-llamacpp-wrapper",
+  "productName": "Mr. Eagle LLaMaCpp Wrapper",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
