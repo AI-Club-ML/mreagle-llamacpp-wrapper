@@ -1,6 +1,10 @@
 const { ipcRenderer } = require("electron");
 const { round } = require("../../api/utils/math.js");
 
+ipcRenderer.send("download:path");
+ipcRenderer.on("download:path", (_event, path) => {
+  document.getElementById("location").innerHTML = path;
+});
 document
   .getElementById("download-button")
   .addEventListener("click", async () => {
